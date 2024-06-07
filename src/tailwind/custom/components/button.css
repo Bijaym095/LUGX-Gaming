@@ -1,0 +1,36 @@
+.btn {
+    @apply
+    inline-flex
+    justify-center
+    items-center
+    min-w-[6rem]
+    py-2
+    px-5
+    font-medium
+    text-white
+    bg-primary
+    border
+    border-transparent
+    rounded-[5rem]
+    text-center
+    align-top
+    transition-all
+    duration-300
+    ease-in-out
+    cursor-pointer
+    overflow-hidden
+
+    hover:bg-primary/80
+    ;
+}
+
+.btn-primary {
+    @apply
+    text-white
+    bg-primary
+
+    hover:text-primary
+    hover:bg-white
+    hover:border-primary
+    ;
+}
