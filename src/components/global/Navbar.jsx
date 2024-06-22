@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import SiteLogo from "@/views/lugx-logo.png"
+import SiteLogo from "@/assets/images/lugx-logo.png"; 
 
 const Navbar = () => {
 

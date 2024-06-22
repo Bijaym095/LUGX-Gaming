@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       container: {
@@ -11,24 +8,27 @@ export default {
       },
 
       colors: {
-        'primary': '#ee626b',
+        primary: "#ee626b",
 
-        'secondary': '#0071f8',
+        secondary: "#0071f8",
+
+        "lx-gray": {
+          DEFAULT: "#eeeeee",
+        },
       },
 
       screens: {
-        'sm': '576px',
-        'md': '768px',
-        'lg': '992px',
-        'xl': '1200px',
-        '2xl': '1310px',
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1200px",
+        "2xl": "1310px",
       },
 
       fontFamily: {
-        'poppins': ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
-
+};

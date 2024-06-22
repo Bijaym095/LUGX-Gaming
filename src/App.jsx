@@ -8,14 +8,14 @@ import {
 import RootLayout from "@/layouts/RootLayout";
 import Home from "@/pages/Home";
 import Components from "@/pages/Components";
-import Shop from "@/pages/Shop";
+import Test from "@/pages/Test";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home/>}/>
       <Route path="/components" element={<Components/>}/>
-      <Route path="/shop" element={<Shop/>}/>
+      <Route path="/components/test" element={<Test/>}/>
     </Route>
   )
 );

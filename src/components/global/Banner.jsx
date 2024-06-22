@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import HeroImg from "@/views/hero-img.jpg";
+import HeroImg from "@/assets/images/hero-img.jpg";
 import BannerBg from "@/assets/images/banner-bg.jpg";
-import InnerBannerBg from "@/assets/images/inner-banner-bg.jpg"
+import InnerBannerBg from "@/assets/images/inner-banner-bg.jpg";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { capitalize } from "@/utils/stringUtils";
 
 const Banner = () => {
-  const location = useLocation();
-  const [currentUri, setCurrentUri] = useState("");
+  let location = useLocation();
+  const [currentUrl, setcurrentUrl] = useState("");
   const [title, setTitle] = useState("");
 
-  useEffect(() => {
-    setCurrentUri(location.pathname);
-    setTitle(currentUri.slice(1, currentUri.length).toUpperCase())
+  useEffect(()=> {
+    const pathnames = location.pathname.split("/").filter((x) => x);
 
-    // console.log("Test", location.pathname.split('/') )
-    
-  }, [location, currentUri]);
+    setcurrentUrl(location.pathname);
+    setTitle(pathnames[pathnames.length - 1]);
+  }, [location])
 
-  if (currentUri === "/") {
+
+  if (currentUrl === "/") {
     return (
       <section className="py-8 md:py-14" style={{backgroundImage: `url('${BannerBg}')`}}>
         <div className="container">
@@ -60,12 +62,6 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      
-        <div className="container">
-          <div className="flex flex-wrap">
-            
-          </div>
-        </div>
       </section>
     );
   }
@@ -74,7 +70,8 @@ const Banner = () => {
     <section className="bg-no-repeat bg-center bg-cover" style={{backgroundImage: `url('${InnerBannerBg}')`}}>
       <div className="container">
           <div className="flex flex-col justify-center items-center min-h-[20rem]">
-            <h1 className="text-white">{title}</h1>
+            <h1 className="text-white">{capitalize(title)}</h1>
+            <Breadcrumbs/>
           </div>
       </div>
     </section>
